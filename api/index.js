@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 
 app.use(express.json()); 
-const PORT = 4000;
 
 app.get('/home', (req, res) => {
   res.status(200).json('Welcome page');
@@ -39,10 +38,6 @@ app.post("/contacts", async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Erro ao criar contato no ActiveCampaign" });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Operational Server on port ${PORT}`);
 });
 
 module.exports = app;
